@@ -1,3 +1,8 @@
-Les réponses sont dans le fichier reponse.txt
+Les réponses de l'exercie 1 sont dans le fichier reponse.txt
+
+
+Pour la partie 2 j'ai opté pour API REST :
 
 Le sql est dans le fichier createTable.sql
+
+Je n'ai pas eu le temps de finir la recherche alphabétique.

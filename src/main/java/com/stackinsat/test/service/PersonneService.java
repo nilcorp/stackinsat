@@ -25,7 +25,7 @@ public class PersonneService {
     }
 
     public List<DomainPersonne> findAll(){
-        return personneRepository.findAll().stream().map(PersonneMapper::toDomainPersonne).collect(Collectors.toList());
+        return personneRepository.findAllByOrderByNomAsc().stream().map(PersonneMapper::toDomainPersonne).collect(Collectors.toList());
     }
 
 
