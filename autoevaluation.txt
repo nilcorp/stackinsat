@@ -1,0 +1,3 @@
+Les réponses sont dans le fichier reponse.txt
+
+Le sql est dans le fichier createTable.sql
