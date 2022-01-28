@@ -4,7 +4,6 @@ package com.stackinsat.test.service;
 import com.stackinsat.test.domain.DomainPersonne;
 import com.stackinsat.test.domain.DomainPersonneMapper;
 import com.stackinsat.test.exception.BusinessException;
-import com.stackinsat.test.model.Personne;
 import com.stackinsat.test.model.PersonneMapper;
 import com.stackinsat.test.repository.PersonneRepository;
 import org.slf4j.Logger;
@@ -33,16 +32,17 @@ public class PersonneService {
     public void creerPersonne(DomainPersonne domainPersonne){
         try {
             if(domainPersonne.controleAvantInsertion()) {
-                Personne p = DomainPersonneMapper.toPersonne(domainPersonne);
-
                 personneRepository.save(DomainPersonneMapper.toPersonne(domainPersonne));
-                logger.info("Creation !!!");
             }else{
-                throw new BusinessException("Creation impossible : age > 150");
+                throw new BusinessException("Erreur age > 150 ans");
             }
         }catch(Exception e){
-            logger.error(e.getMessage());
-            throw new BusinessException("Create error");
+           if( ! (e instanceof BusinessException)) {
+                logger.error(e.getMessage());
+                throw new BusinessException("Create error");
+           }else{
+               throw e;
+           }
         }
 
     }
