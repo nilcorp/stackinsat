@@ -5,6 +5,7 @@ import com.stackinsat.test.domain.DomainPersonneMapper;
 import com.stackinsat.test.dto.PersonneDto;
 import com.stackinsat.test.dto.PersonneDtoMapper;
 import com.stackinsat.test.service.PersonneService;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/personnes")
+@Api(value="person Controller")
 public class PersonneController {
 
     private PersonneService personneService;
