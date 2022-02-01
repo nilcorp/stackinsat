@@ -18,6 +18,10 @@ public class DomainPersonne {
         }
         return controle;
     }
+
+    public Long getAge(){
+        return Long.valueOf( Period.between(dateDeNaissance, LocalDate.now()).getYears());
+    }
     public String getNom() {
         return nom;
     }

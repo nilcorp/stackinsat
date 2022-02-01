@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface PersonneRepository extends JpaRepository<Personne, Long> {
 
-    public List<Personne> findAllByOrderByNomAsc();
+    public List<Personne> findAllByOrderByNomAscPrenomAsc();
 }

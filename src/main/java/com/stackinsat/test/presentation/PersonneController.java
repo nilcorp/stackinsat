@@ -28,7 +28,6 @@ public class PersonneController {
     @PostMapping(
             value = "", consumes = "application/json", produces = "application/json")
     public PersonneDto createPersonne(@RequestBody PersonneDto personneDto) {
-        personneService.creerPersonne(PersonneDtoMapper.toDomain(personneDto));
-        return personneDto;
+        return DomainPersonneMapper.toPersonneDto(personneService.creerPersonne(PersonneDtoMapper.toDomain(personneDto)));
     }
 }

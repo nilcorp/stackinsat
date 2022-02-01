@@ -18,6 +18,7 @@ public class DomainPersonneMapper {
         personneDto.setNom(domainPersonne.nom);
         personneDto.setPrenom(domainPersonne.prenom);
         personneDto.setDateDeNaissance(domainPersonne.dateDeNaissance.toString());
+        personneDto.setAge(domainPersonne.getAge());
         return personneDto;
     }
 }

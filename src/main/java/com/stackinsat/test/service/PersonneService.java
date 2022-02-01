@@ -25,14 +25,14 @@ public class PersonneService {
     }
 
     public List<DomainPersonne> findAll(){
-        return personneRepository.findAllByOrderByNomAsc().stream().map(PersonneMapper::toDomainPersonne).collect(Collectors.toList());
+        return personneRepository.findAllByOrderByNomAscPrenomAsc().stream().map(PersonneMapper::toDomainPersonne).collect(Collectors.toList());
     }
 
 
-    public void creerPersonne(DomainPersonne domainPersonne){
+    public DomainPersonne creerPersonne(DomainPersonne domainPersonne){
         try {
             if(domainPersonne.controleAvantInsertion()) {
-                personneRepository.save(DomainPersonneMapper.toPersonne(domainPersonne));
+                return PersonneMapper.toDomainPersonne(personneRepository.save(DomainPersonneMapper.toPersonne(domainPersonne)));
             }else{
                 throw new BusinessException("Erreur age > 150 ans");
             }
@@ -44,6 +44,5 @@ public class PersonneService {
                throw e;
            }
         }
-
     }
 }

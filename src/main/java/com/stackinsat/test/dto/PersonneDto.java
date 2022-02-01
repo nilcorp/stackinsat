@@ -7,6 +7,7 @@ public class PersonneDto {
     public String nom;
     public String prenom;
     public String dateDeNaissance;
+    public Long age;
 
     public String getNom() {
         return nom;
@@ -30,5 +31,13 @@ public class PersonneDto {
 
     public void setDateDeNaissance(String dateDeNaissance) {
         this.dateDeNaissance = dateDeNaissance;
+    }
+
+    public Long getAge() {
+        return age;
+    }
+
+    public void setAge(Long age) {
+        this.age = age;
     }
 }

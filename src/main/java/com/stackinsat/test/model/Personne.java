@@ -19,7 +19,7 @@ public class Personne {
     @Column(name="prenom")
     String prenom;
 
-    @Column(name="date")
+    @Column(name="date_de_naissance")
     LocalDate dateDeNaissance;
 
     public Long getId() {
